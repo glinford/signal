@@ -46,12 +46,17 @@ Using Jest CLI v13.2.3, jasmine2
 1 test passed (1 total in 1 test suite, run time 3.917s)
 ```
 
-## API (Extra feature)
+## API
+
+Start API server ...
+
 ```shell
+node run-script api
+#OR
 node do.js api
 ```
 
-**Usage**
+Usage
 ```shell
 GET http://localhost:8080 [env.PORT] /convert/NUMBER
 ```
