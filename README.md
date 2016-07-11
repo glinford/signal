@@ -3,8 +3,8 @@
 ### **Build in Javascript**
 
 ## Dependencies :
-NPM > 3.3.0
-Node.js > 5.7.0
+- NPM > 3.3.0
+- Node.js > 5.7.0
 
 ## Installation :
 ```shell
@@ -45,3 +45,5 @@ Using Jest CLI v13.2.3, jasmine2
  PASS  __tests__/signal-test.js (0.027s)
 1 test passed (1 total in 1 test suite, run time 3.917s)
 ```
+
+By @glinford, Tested on OSX El Capitan, v10.11.5
