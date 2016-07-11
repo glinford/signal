@@ -28,7 +28,7 @@ function leftTrim(nbr) {
 
 function convert(number) {
     var words;
-    var num = Number.isInteger(parseFloat(leftTrim(number))) && !isNaN(number);
+    var num = Number.isInteger(parseFloat(leftTrim(number))) && !isNaN(number); //Making sure the input is a valid integer
     if (num){
       words = makeSentence(parseInt(number, 10));
     } else {
@@ -46,7 +46,7 @@ function makeSentence(number, sentence) {
         return !words || !words.length ? 'zero' : words.join(' ').replace(/,$/, '');
     }
 
-    if (number < 0) {
+    if (number < 0 || number > ONE_THOUSAND) {
         word = number + ' not allowed';
         left = 0;
     } else if (number < 20) {
@@ -68,9 +68,6 @@ function makeSentence(number, sentence) {
     } else if (number === ONE_THOUSAND) {
         left = number % ONE_THOUSAND;
         word = makeSentence(Math.floor(number / ONE_THOUSAND)) + ' thousand';
-    } else {
-      word = number + ' not allowed';
-      left = 0;
     }
 
     words.push(word);
@@ -82,7 +79,7 @@ if (typeof exports != 'undefined') {
   if (typeof module != 'undefined' && module.exports) {
     exports = module.exports = convert;
   }
-  exports.numberToWords = convert;
+  exports.signal = convert;
 }
 
 }());

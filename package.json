@@ -17,5 +17,8 @@
   "homepage": "https://github.com/glinford/signal#readme",
   "devDependencies": {
     "jest-cli": "^13.2.3"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
   }
 }
