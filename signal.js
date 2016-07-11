@@ -15,16 +15,17 @@ var UNDER_TWENTY = [
     'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'
 ];
 
+
+function leftTrim(nbr) {
+  return nbr.replace && nbr !== "0" ? nbr.replace(/^0+/,"") : nbr;
+}
+
 /**
  * Converts an integer between 0 and 1000 to a grammatical correct sentence.
  * @example convert(11) => 'eleven'
  * @param {number|string} number
  * @returns {string}
  */
-
-function leftTrim(nbr) {
-  return nbr.replace && nbr !== "0" ? nbr.replace(/^0+/,"") : nbr;
-}
 
 function convert(number) {
     var words;
