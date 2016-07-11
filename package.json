@@ -4,7 +4,8 @@
   "description": "Signal Test",
   "main": "do.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "api": "node do.js api"
   },
   "repository": {
     "type": "git",
