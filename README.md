@@ -1,6 +1,6 @@
 # **signal**
 
-### **Build in Javascript**
+### **Built in Javascript**
 
 ## Dependencies :
 - NPM > 3.3.0
@@ -11,7 +11,7 @@
 npm install
 ```
 
-### Usage Exemples :
+### Usage Examples :
 ``` shell
 > node do.js 123 0 1221 4353 22 113
 one hundred and twenty-three
