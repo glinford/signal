@@ -81,6 +81,8 @@ if (typeof exports != 'undefined') {
     exports = module.exports = convert;
   }
   exports.signal = convert;
+} else {
+  self.signal = convert;
 }
 
 }());
