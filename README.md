@@ -46,4 +46,14 @@ Using Jest CLI v13.2.3, jasmine2
 1 test passed (1 total in 1 test suite, run time 3.917s)
 ```
 
+## API (Extra feature)
+```shell
+node do.js api
+```
+
+**Usage**
+```shell
+GET http://localhost:8080 [env.PORT] /convert/NUMBER
+```
+
 By @glinford, Tested on OSX El Capitan, v10.11.5
