@@ -11,7 +11,7 @@
 npm install
 ```
 
-### Usage Examples :
+### CLI Usage Examples :
 ``` shell
 > node do.js 123 0 1221 4353 22 113
 one hundred and twenty-three
