@@ -67,7 +67,7 @@ function makeSentence(number, sentence) {
         }
     } else if (number === ONE_THOUSAND) {
         left = number % ONE_THOUSAND;
-        word = makeSentence(Math.floor(number / ONE_THOUSAND)) + ' thousand,';
+        word = makeSentence(Math.floor(number / ONE_THOUSAND)) + ' thousand';
     } else {
       word = number + ' not allowed';
       left = 0;
