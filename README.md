@@ -46,6 +46,14 @@ Using Jest CLI v13.2.3, jasmine2
 1 test passed (1 total in 1 test suite, run time 3.917s)
 ```
 
+The library can also be used in Browser
+
+```html
+<script src="./signal.js"></script>
+```
+
+![enter image description here](http://i.imgur.com/J24G1wP.png?1)
+
 ## API
 
 Start API server ...
