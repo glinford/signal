@@ -6,13 +6,13 @@ var TEN = 10;
 var ONE_HUNDRED = 100;
 var ONE_THOUSAND = 1000;
 
+var UNDER_HUNDRED_TENTH = [
+    'zero', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
+];
+
 var UNDER_TWENTY = [
     'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
     'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'
-];
-
-var UNDER_HUNDRED_TENTH = [
-    'zero', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
 ];
 
 /**
@@ -22,13 +22,17 @@ var UNDER_HUNDRED_TENTH = [
  * @returns {string}
  */
 
+function leftTrim(nbr) {
+  return nbr.replace && nbr !== "0" ? nbr.replace(/^0+/,"") : nbr;
+}
+
 function convert(number) {
     var words;
-    var num = Number.isInteger(parseFloat(number));
+    var num = Number.isInteger(parseFloat(leftTrim(number))) && !isNaN(number);
     if (num){
-      words = makeSentence(parseInt(number));
+      words = makeSentence(parseInt(number, 10));
     } else {
-      words = 'None integers are not allowed => ' + number;
+      words = 'Non-integers are not allowed => ' + number;
     }
     return words;
 }

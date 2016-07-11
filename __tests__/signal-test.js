@@ -1,7 +1,7 @@
 jest.unmock('../signal');
 
 describe('signal', () => {
-  it('Converts any integer between 0 and 1000 included to a grammatical correct sentence.', () => {
+  it('Converts any integer between 0 and 1000 inclusive to a grammatically correct sentence.', () => {
     const convert = require('../signal');
 
     expect(convert(12)).toBe("twelve");
@@ -13,18 +13,36 @@ describe('signal', () => {
     expect(convert(200)).toBe("two hundred");
     expect(convert(235)).toBe("two hundred and thirty-five");
     expect(convert(546)).toBe("five hundred and forty-six");
-    expect(convert(23.34)).toBe("None integers are not allowed => 23.34");
-    expect(convert(1.23)).toBe("None integers are not allowed => 1.23");
-    expect(convert(200.23)).toBe("None integers are not allowed => 200.23");
-    expect(convert(-1.23)).toBe("None integers are not allowed => -1.23");
-    expect(convert(1209.34)).toBe("None integers are not allowed => 1209.34");
-    expect(convert(-1345.23)).toBe("None integers are not allowed => -1345.23");
+    expect(convert(23.34)).toBe("Non-integers are not allowed => 23.34");
+    expect(convert(1.23)).toBe("Non-integers are not allowed => 1.23");
+    expect(convert(200.23)).toBe("Non-integers are not allowed => 200.23");
+    expect(convert(-1.23)).toBe("Non-integers are not allowed => -1.23");
+    expect(convert(1209.34)).toBe("Non-integers are not allowed => 1209.34");
+    expect(convert(-1345.23)).toBe("Non-integers are not allowed => -1345.23");
     expect(convert(-20)).toBe("-20 not allowed");
     expect(convert(1250)).toBe("1250 not allowed");
     expect(convert(874)).toBe("eight hundred and seventy-four");
-    expect(convert("世界餐福事工餐廳員工沒精打采")).toBe("None integers are not allowed => 世界餐福事工餐廳員工沒精打采");
-    expect(convert("�������")).toBe("None integers are not allowed => �������");
-    expect(convert("eleven")).toBe("None integers are not allowed => eleven");
+    expect(convert("12")).toBe("twelve");
+    expect(convert("22")).toBe("twenty-two");
+    expect(convert("111")).toBe("one hundred and eleven");
+    expect(convert("0")).toBe("zero");
+    expect(convert("1000")).toBe("one thousand");
+    expect(convert("100")).toBe("one hundred");
+    expect(convert("200")).toBe("two hundred");
+    expect(convert("235")).toBe("two hundred and thirty-five");
+    expect(convert("546")).toBe("five hundred and forty-six");
+    expect(convert("23.34")).toBe("Non-integers are not allowed => 23.34");
+    expect(convert("1.23")).toBe("Non-integers are not allowed => 1.23");
+    expect(convert("200.23")).toBe("Non-integers are not allowed => 200.23");
+    expect(convert("-1.23")).toBe("Non-integers are not allowed => -1.23");
+    expect(convert("1209.34")).toBe("Non-integers are not allowed => 1209.34");
+    expect(convert("-1345.23")).toBe("Non-integers are not allowed => -1345.23");
+    expect(convert("-20")).toBe("-20 not allowed");
+    expect(convert("1250")).toBe("1250 not allowed");
+    expect(convert("874")).toBe("eight hundred and seventy-four");
+    expect(convert("世界餐福事工餐廳員工沒精打采")).toBe("Non-integers are not allowed => 世界餐福事工餐廳員工沒精打采");
+    expect(convert("�������")).toBe("Non-integers are not allowed => �������");
+    expect(convert("eleven")).toBe("Non-integers are not allowed => eleven");
     expect(convert(769)).toBe("seven hundred and sixty-nine");
     expect(convert(9)).toBe("nine");
     expect(convert(4)).toBe("four");
@@ -34,5 +52,17 @@ describe('signal', () => {
     expect(convert(17)).toBe("seventeen");
     expect(convert(2)).toBe("two");
     expect(convert(1)).toBe("one");
+    expect(convert("john12")).toBe("Non-integers are not allowed => john12");
+    expect(convert("56lol")).toBe("Non-integers are not allowed => 56lol");
+    expect(convert("23.likes")).toBe("Non-integers are not allowed => 23.likes");
+    expect(convert("23oww983")).toBe("Non-integers are not allowed => 23oww983");
+    expect(convert("10   x")).toBe("Non-integers are not allowed => 10   x");
+    expect(convert("1  2  5")).toBe("Non-integers are not allowed => 1  2  5");
+    expect(convert(42)).toBe("forty-two"); //Answer to Life, the Universe and Everything
+    expect(convert(08)).toBe("eight");
+    expect(convert("00026")).toBe("twenty-six");
+    expect(convert("011")).toBe("eleven");
+    expect(convert("0x10")).toBe("Non-integers are not allowed => 0x10");
+    expect(convert("")).toBe("Non-integers are not allowed => ");
   });
 });
